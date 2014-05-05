@@ -10,29 +10,36 @@ $paper-height: 70.42057157034745rem;
 
 //Size calculations
 $unit: $paper-height / 35.2;
+$logo-width: $unit*5.1;
+$table-width: $paper-width - $logo-width - $unit*2; 
 
 //Colours
 $paper-colour: #ffdd21;
 $dark-grey:    #312f24;
 
 //Table grid colours
-$dark-grid:    rgba(0,0,0,0.27); //27% black
-$light-grid:   rgba(0,0,0,0.07); //07% black
+$dark-grid:    rgba(0,0,0,0.1); //27% black
+$light-grid:   rgba(0,0,0,0.05); //07% black
 
 //Fonts
 $body-font:    Avenir LT Std;
 $header-font:  Montserrat;
+$body-font-size: $unit/3.333333;
+$larger-font-size: $body-font-size*1.33333;
+$body-line-height: ($unit/3.33333)*1.33333;
 
 html {
 	font-size: 100%;
 }
 
+p {	margin: 0; }
+
 body {
 	padding: 30px;
 	font-family: $body-font;
 	text-rendering: optimizeLegibility;
-	font-size: $unit/3.333333;
-	line-height: ($unit/3.33333)*1.33333;
+	font-size: $body-font-size;
+	line-height: $body-line-height;
 }
 
 .wrapper {
@@ -43,9 +50,6 @@ body {
 	margin: auto;
 	overflow: hidden;
 	padding: $unit*2;
-	p {
-		
-	}
 }
 
 h1 {
@@ -58,7 +62,11 @@ h1 {
 
 .invoice-fao {
 	float: left;
-	width: $unit*5.1;
+	width: $logo-width;
+	margin-bottom: $unit*2;
+	span {
+		font-weight: 700;
+	}
 }
 
 .invoice-details {
@@ -79,4 +87,82 @@ h1 {
 	}
 }
 
+table {
+	font-size: $body-font-size;
+	clear: both;
+	position: relative;
+	left: $logo-width;
+	width: $table-width;
+	margin-bottom: $unit*2;
+	thead{
+		font-size: $larger-font-size;
+		font-weight: 700;
+		border-bottom-width: $unit/20;
+		border-bottom-style: solid;
+		border-bottom-color: $dark-grid;
+		th.item {
+			width: $logo-width*2;
+		}
+	}
+	tbody {
+		tr {
+			border-bottom-width: $unit/40;
+			border-bottom-style: solid;
+			border-bottom-color: $light-grid;
+		}
+	}
+	tfoot {
+		font-size: $larger-font-size;
+		font-weight: 700;
+		border-top-width: $unit/20;
+		border-top-style: solid;
+		border-top-color: $dark-grid;
+	}
+	tr td {
+		padding: $body-line-height/2 0 $body-line-height/2.5;
+	}
+}
 
+.payment-terms {
+	font-size: $larger-font-size;
+	font-weight: 700;
+	margin-bottom: $unit;
+}
+
+.invoice-thanks {
+	font-size: $body-font-size*2;
+	line-height: $body-font-size*2;
+	font-weight: 700;
+	span {
+		font-size: $larger-font-size;
+	}
+}
+
+.details-block {
+	position: absolute;
+	bottom: $unit*2;
+}
+
+h2 {
+	font-size: $body-font-size;
+	font-weight: 700;
+	margin-bottom: 0;
+}
+
+.company-details {
+	width: $logo-width*2;
+	float: left;
+}
+
+.company-number {
+	width: $logo-width*2;
+	float: left;
+	span {
+		width: $unit*4;
+		display: inline-block;
+	}
+}
+
+.payment-details {
+	margin-bottom: $unit;
+}
