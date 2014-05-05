@@ -3,3 +3,80 @@
 /*******************
   Project styles
   *******************/
+
+//A4 Paper size in ems
+$paper-width:  49.792323332568905rem; 
+$paper-height: 70.42057157034745rem;
+
+//Size calculations
+$unit: $paper-height / 35.2;
+
+//Colours
+$paper-colour: #ffdd21;
+$dark-grey:    #312f24;
+
+//Table grid colours
+$dark-grid:    rgba(0,0,0,0.27); //27% black
+$light-grid:   rgba(0,0,0,0.07); //07% black
+
+//Fonts
+$body-font:    Avenir LT Std;
+$header-font:  Montserrat;
+
+html {
+	font-size: 100%;
+}
+
+body {
+	padding: 30px;
+	font-family: $body-font;
+	text-rendering: optimizeLegibility;
+	font-size: $unit/3.333333;
+	line-height: ($unit/3.33333)*1.33333;
+}
+
+.wrapper {
+	position: relative;
+	width: $paper-width;
+	height: $paper-height;
+	background-color: $paper-colour;
+	margin: auto;
+	overflow: hidden;
+	padding: $unit*2;
+	p {
+		
+	}
+}
+
+h1 {
+	font-family: $header-font;
+	text-transform: uppercase;
+	font-size: $unit;
+	margin: 0;
+	margin-bottom: $unit*2;
+}
+
+.invoice-fao {
+	float: left;
+	width: $unit*5.1;
+}
+
+.invoice-details {
+
+}
+
+.contact-details {
+	right: $unit*2;
+	top: $unit*2;
+	-webkit-transform:rotate(90deg);
+	-webkit-transform-origin: top left;
+	position: absolute;
+	width: 0;
+	white-space: nowrap;
+	a {
+		color: $dark-grey;
+		display: block;
+	}
+}
+
+
