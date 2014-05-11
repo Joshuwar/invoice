@@ -127,6 +127,7 @@ table {
 	tr td {
 		padding: $body-line-height/2 $unit $body-line-height/2.5 0;
 		line-height: $body-line-height;
+		vertical-align: baseline;
 	}
 	tr td:first-child {
 		width: $logo-width*2;
