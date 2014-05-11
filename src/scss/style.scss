@@ -9,13 +9,14 @@ $paper-width:  49.792323332568905rem;
 $paper-height: 70.42057157034745rem;
 
 //Size calculations
-$unit: $paper-height / 35.2;
-$logo-width: $unit*5.1;
+$unit: $paper-height / 30.2;
+$logo-width: $unit*5.15;
 $table-width: $paper-width - $logo-width - $unit*2; 
 
 //Colours
-$paper-colour: #ffdd21;
-$dark-grey:    #312f24;
+$paper-colour:  #fbfbfb;
+$accent-colour: #ffdd21;
+$dark-grey:     #312f24;
 
 //Table grid colours
 $dark-grid:    rgba(0,0,0,0.1); //27% black
@@ -40,6 +41,7 @@ body {
 	text-rendering: optimizeLegibility;
 	font-size: $body-font-size;
 	line-height: $body-line-height;
+	background-color: #333;
 }
 
 .wrapper {
@@ -58,19 +60,21 @@ h1 {
 	font-size: $unit;
 	margin: 0;
 	margin-bottom: $unit*2;
+	position: relative;
 }
 
 .invoice-fao {
 	float: left;
 	width: $logo-width;
 	margin-bottom: $unit*2;
+	position: relative;
 	span {
 		font-weight: 700;
 	}
 }
 
 .invoice-details {
-
+	position: relative;
 }
 
 .contact-details {
@@ -96,12 +100,14 @@ table {
 	margin-bottom: $unit*2;
 	thead{
 		font-size: $larger-font-size;
+		line-height: $body-line-height*1.3333;
 		font-weight: 700;
 		border-bottom-width: $unit/20;
 		border-bottom-style: solid;
 		border-bottom-color: $dark-grid;
 		th.item {
 			width: $logo-width*2;
+			max-width: $logo-width*2;
 		}
 	}
 	tbody {
@@ -119,7 +125,11 @@ table {
 		border-top-color: $dark-grid;
 	}
 	tr td {
-		padding: $body-line-height/2 0 $body-line-height/2.5;
+		padding: $body-line-height/2 $unit $body-line-height/2.5 0;
+		line-height: $body-line-height;
+	}
+	tr td:first-child {
+		width: $logo-width*2;
 	}
 }
 
@@ -155,7 +165,7 @@ h2 {
 }
 
 .company-number {
-	width: $logo-width*2;
+	width: $logo-width*1.5;
 	float: left;
 	span {
 		width: $unit*4;
@@ -166,3 +176,22 @@ h2 {
 .payment-details {
 	margin-bottom: $unit;
 }
+
+.border-edge {
+	width: $logo-width;
+	height: $unit / 10;
+	background-color: $dark-grey;
+	position: absolute;
+	bottom: 0;
+	left: $unit *2;
+}
+
+.background-screen {
+	background-color: $accent-colour;
+	height: $logo-width * 1.5;
+	width: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
