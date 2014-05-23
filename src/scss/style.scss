@@ -16,6 +16,7 @@ $table-width: $paper-width - $logo-width - $unit*2;
 //Colours
 $paper-colour:  #fbfbfb;
 $accent-colour: #ffdd21;
+$dark-accent:   #e3c017;
 $dark-grey:     #312f24;
 
 //Table grid colours
@@ -28,6 +29,8 @@ $header-font:  Montserrat;
 $body-font-size: $unit/3.333333;
 $larger-font-size: $body-font-size*1.33333;
 $body-line-height: ($unit/3.33333)*1.33333;
+
+// Generic styles
 
 html {
 	font-size: 100%;
@@ -64,6 +67,56 @@ h1 {
 	position: relative;
 }
 
+h2 {
+	font-size: $body-font-size;
+	font-weight: 700;
+	margin-bottom: 0;
+	position: relative;
+}
+
+.background-screen {
+	background-color: $accent-colour;
+	width: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+table {
+	font-size: $body-font-size;
+	position: relative;
+	thead{
+		font-size: $larger-font-size;
+		line-height: $body-line-height*1.3333;
+		font-weight: 700;
+		border-bottom-width: $unit/20;
+		border-bottom-style: solid;
+		border-bottom-color: $dark-grid;
+	}
+	tbody {
+		tr {
+			border-bottom-width: $unit/40;
+			border-bottom-style: solid;
+			border-bottom-color: $light-grid;
+		}
+	}
+	tfoot {
+		font-size: $larger-font-size;
+		font-weight: 700;
+		border-top-width: $unit/20;
+		border-top-style: solid;
+		border-top-color: $dark-grid;
+	}
+	tr td {
+		padding: $body-line-height/2 $unit $body-line-height/2.5 0;
+		line-height: $body-line-height;
+		vertical-align: baseline;
+	}
+}
+
+
+// Invoice Styles
+
 .invoice-fao {
 	float: left;
 	width: $logo-width;
@@ -93,42 +146,15 @@ h1 {
 }
 
 table.invoice-items {
-	font-size: $body-font-size;
 	clear: both;
-	position: relative;
 	left: $logo-width;
 	width: $table-width;
 	margin-bottom: $unit*2;
 	thead{
-		font-size: $larger-font-size;
-		line-height: $body-line-height*1.3333;
-		font-weight: 700;
-		border-bottom-width: $unit/20;
-		border-bottom-style: solid;
-		border-bottom-color: $dark-grid;
 		th.item {
 			width: $logo-width*2;
 			max-width: $logo-width*2;
 		}
-	}
-	tbody {
-		tr {
-			border-bottom-width: $unit/40;
-			border-bottom-style: solid;
-			border-bottom-color: $light-grid;
-		}
-	}
-	tfoot {
-		font-size: $larger-font-size;
-		font-weight: 700;
-		border-top-width: $unit/20;
-		border-top-style: solid;
-		border-top-color: $dark-grid;
-	}
-	tr td {
-		padding: $body-line-height/2 $unit $body-line-height/2.5 0;
-		line-height: $body-line-height;
-		vertical-align: baseline;
 	}
 	tr td:first-child {
 		width: $logo-width*2;
@@ -153,12 +179,6 @@ table.invoice-items {
 .invoice-details-block {
 	position: absolute;
 	bottom: $unit*2;
-}
-
-h2 {
-	font-size: $body-font-size;
-	font-weight: 700;
-	margin-bottom: 0;
 }
 
 .invoice-company-details {
@@ -189,11 +209,49 @@ h2 {
 }
 
 .invoice-background-screen {
-	background-color: $accent-colour;
+	@extend .background-screen;
 	height: $logo-width * 1.5;
-	width: 100%;
-	position: absolute;
-	top: 0;
-	left: 0;
 }
+
+// Document Cover
+
+.cover-background-screen {
+	@extend .background-screen;
+	height: $paper-height*0.66666;
+}
+
+h2.cover-title {
+	font-size: $body-font-size*2;
+	font-weight: 300;
+	margin: $unit*2 0 $unit*2 $logo-width;
+	width: $logo-width*2;
+}
+
+p.cover-subtitle {
+	font-size: $larger-font-size;
+	line-height:$larger-font-size*1.333;
+	font-weight: 100;
+	width: $logo-width*2;
+	position: relative;
+	margin-bottom: $logo-width;
+}
+
+.cover-row {
+	position: relative;
+	border-bottom: 1px solid $dark-accent;
+	overflow: hidden;
+	padding-bottom: $unit/2;
+	p {
+		width: $logo-width;
+		padding-right: $unit/2;
+		float: left;
+	}
+}
+
+table.cover-contents {
+	position: absolute;
+	top: $paper-height*0.66666+$unit;
+}
+
+
 
