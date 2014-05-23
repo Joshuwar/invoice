@@ -78,7 +78,7 @@ h1 {
 	position: relative;
 }
 
-.contact-details {
+.invoice-contact-details {
 	right: $unit*2;
 	top: $unit*2;
 	-webkit-transform:rotate(90deg);
@@ -92,7 +92,7 @@ h1 {
 	}
 }
 
-table {
+table.invoice-items {
 	font-size: $body-font-size;
 	clear: both;
 	position: relative;
@@ -135,7 +135,7 @@ table {
 	}
 }
 
-.payment-terms {
+.invoice-payment-terms {
 	font-size: $larger-font-size;
 	font-weight: 700;
 	margin-bottom: $unit;
@@ -150,7 +150,7 @@ table {
 	}
 }
 
-.details-block {
+.invoice-details-block {
 	position: absolute;
 	bottom: $unit*2;
 }
@@ -161,12 +161,12 @@ h2 {
 	margin-bottom: 0;
 }
 
-.company-details {
+.invoice-company-details {
 	width: $logo-width*2;
 	float: left;
 }
 
-.company-number {
+.invoice-company-number {
 	width: $logo-width*1.5;
 	float: left;
 	span {
@@ -175,11 +175,11 @@ h2 {
 	}
 }
 
-.payment-details {
+.invoice-payment-details {
 	margin-bottom: $unit;
 }
 
-.border-edge {
+.invoice-border-edge {
 	width: $logo-width;
 	height: $unit / 10;
 	background-color: $dark-grey;
@@ -188,7 +188,7 @@ h2 {
 	left: $unit *2;
 }
 
-.background-screen {
+.invoice-background-screen {
 	background-color: $accent-colour;
 	height: $logo-width * 1.5;
 	width: 100%;
