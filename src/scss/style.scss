@@ -36,7 +36,9 @@ html {
 	font-size: 100%;
 }
 
-p {	margin: 0; }
+p {	
+	margin: 0; 
+}
 
 body {
 	padding: 30px;
@@ -252,6 +254,49 @@ table.cover-contents {
 	position: absolute;
 	top: $paper-height*0.66666+$unit;
 }
+
+// Document page styles
+
+.document-page {
+	p {
+		margin: 0 0 $unit/2 $logo-width;
+	}
+	ul, ol {
+		margin: 0 0 $unit/2 $logo-width;	
+		padding: 0;
+	}
+	h2 { 
+		font-size: $body-font-size*3; 
+		line-height: $body-font-size*3; 
+	}
+	h3 { 
+		font-size: $body-font-size*2; 
+		line-height: $body-font-size*2; 
+	}
+	h4 { 
+		font-size: $body-font-size*1.66666; 
+		line-height: $body-font-size*1.66666; 
+	}
+	h5 { 
+		font-size: $body-font-size*1.33333; 
+		line-height: $body-font-size*1.33333; 
+	}
+	h6 { 
+		font-size: $body-font-size; 
+		line-height: $body-font-size; 
+		font-weight: 700;
+	}
+	h2,h3,h4,h5,h6 {
+		margin-bottom: $unit/2;
+	}
+	h2,h3,h4,h5,h6 {
+		margin-left: $logo-width;
+	}
+
+}
+
+
+
 
 
 
